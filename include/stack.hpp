@@ -5,12 +5,18 @@
 #ifndef ABSTRACTVM_STACK_HPP
     #define ABSTRACTVM_STACK_HPP
 
+    #include <stack>
+    #include <iostream>
+    #include <iomanip>
     #include "IOperand.hpp"
+    #include "Factory.hpp"
+    #include "Register.hpp"
+    #include "eOperandType.hpp"
 
     class Stack {
     public:
         Stack();
-        ~Stack() = default;
+        ~Stack();
         void push(IOperand *op);
         void pop();
         void clear();
@@ -23,15 +29,15 @@
         void mul();
         void div();
         void mod();
-        void load(int v);
-        void store(int v);
+        void load(IOperand *op);
+        void store(IOperand *op);
         void print();
+        std::stack<IOperand *> _stack;
+        Register _register;
     private:
-        int top();
         void is_empty();
         void is_full();
         void least_two();
-        IOperand *_stack[16]{};
     };
 
 #endif //ABSTRACTVM_STACK_HPP

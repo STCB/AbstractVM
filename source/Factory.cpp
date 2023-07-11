@@ -5,6 +5,7 @@
 #include "Float.hpp"
 #include "Double.hpp"
 
+
 IOperand *Factory::createInt8(const std::string &value) {
     return new Int8(value);
 }
@@ -26,7 +27,7 @@ IOperand *Factory::createDouble(const std::string &value) {
 }
 
 IOperand *Factory::createOperand(eOperandType type, const std::string &value) {
-    IOperand* (*opTab[])(const std::string&) =
+    static IOperand* (*opTab[])(const std::string&) =
         {
             createInt8,
             createInt16,

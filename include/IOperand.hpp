@@ -8,6 +8,10 @@
     #include <string>
     #include <utility>
     #include <sstream>
+    #include <ostream>
+    #include <iomanip>
+    #include <cmath>
+    #include <iostream>
     #include "eOperandType.hpp"
 
     class IOperand

@@ -11,7 +11,7 @@
         Float() = default;
         explicit Float(std::string v);
 
-        std::string toString() const override { return _value; };
+        std::string toString() const override;
         void setValue(std::string value) { _value = std::move(value); };
         eOperandType getType() const override;
 
